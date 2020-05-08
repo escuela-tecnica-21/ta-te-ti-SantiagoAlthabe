@@ -3,7 +3,29 @@
 #include <conio2.h>
 #include <string.h>
 #include <math.h>
-//Dicha funcion imprime el tablero de forma completa , sin la necesidad de utilizar "lineas_horizontales" y "lineas verticales" como anteriormente utilice.
+int funcion_tablero ();
+void jugar_contra_maquina();
+inicializar_vector();
+void imprimir_vector();
+
+{
+int main()
+{
+    funcion_tablero();
+ jugar_contra_maquina();
+ //dicho for le da espacio a la finalizacion de programa para que el mismo no se interponga en el tablero.
+ for(int z=1;z<6;z++)
+ {
+     printf("\n");
+ }
+
+}
+
+
+
+
+return 0;
+}
 int funcion_tablero () {
 int x=0;
     for(x=1;x<12;x++)
@@ -35,25 +57,6 @@ int x=0;
         printf("|");
     }
     textcolor(15);
-}
-{// funcion de tipo entero que imprime las lineas horizontales del nuestro tablero de tateti//
-
-int main()
-{
-    funcion_tablero();
- jugar_contra_maquina();
- //dicho for le da espacio a la finalizacion de programa para que el mismo no se interponga en el tablero.
- for(int z=1;z<6;z++)
- {
-     printf("\n");
- }
-
-}
-
-
-
-
-return 0;
 }
 void jugar_contra_maquina(int vector_tateti[9])
 {
@@ -148,6 +151,104 @@ if(vector_tateti[1] == 1 && vector_tateti[2] == 1 && vector_tateti[3] != 0 && ve
      else if(vector_tateti[1] != 1 && vector_tateti[1] != 0 && vector_tateti[2] == 0 && vector_tateti[3] == 0) {
         vector_tateti[1] = 1;
      }
+     //Gana en la segunda fila
+     else if(vector_tateti[4] == 0 && vector_tateti[5] == 0 && vector_tateti[6] != 1 && vector_tateti[6] != 0) {
+        vector_tateti[6] = 1;
+     }
+     else if(vector_tateti[4] == 0 && vector_tateti[5] != 1 && vector_tateti[5] != 0 && vector_tateti[6] == 0) {
+        vector_tateti[5] = 1;
+     }
+     else if(vector_tateti[4] != 1 && vector_tateti[4] != 0 && vector_tateti[5] == 0 && vector_tateti[6] == 0) {
+        vector_tateti[6] = 1;
+     }
+     //Gana en la tercera fila
+     else if(vector_tateti[7] == 0 && vector_tateti[8] == 0 && vector_tateti[9] != 1 && vector_tateti[9] != 0) {
+        vector_tateti[9] = 1;
+     }
+    else if(vector_tateti[7] == 0 && vector_tateti[8] != 1 && vector_tateti[8] != 0 && vector_tateti[9] == 0) {
+        vector_tateti[8] = 1;
+    }
+    else if(vector_tateti[7] != 1 && vector_tateti[7] != 0 && vector_tateti[8] == 0 && vector_tateti[9] == 0) {
+        vector_tateti[7] = 1;
+    }
+    //Gana en la primera columna
+    else if (vector_tateti [1] == 0 && vector_tateti[4] == 0 && vector_tateti[7] != 1 && matriz_tateti[7] != 0) {
+        vector_tateti[7] = 1;
+    }
+    else if(vector_tateti[1] == 0 && vector_tateti[4] != 1 && vector_tateti[4] != 0 && vector_tateti[7] == 0) {
+        vector_tateti[4] = 1;
+    }
+    else if(vector_tateti[1] != 1 && vector_tateti[1] != 0 && vector_tateti[4] == 0 && vector_tateti[7] == 0) {
+        vector_tateti[1] = 1;
+    }
+    //Gana en la segunda columna
+    else if(vector_tateti[2] == 0 && vector_tateti[5] == 0 && vector_tateti[8] != 1 && vector_tateti[8] != 0) {
+        vector_tateti[8] = 1;
+    }
+    else if(vector_tateti[2] == 0 && vector_tateti[5] != 1 && vector_tateti[5] != 0 && vector_tateti[8] == 0) {
+        vector_tateti[5] = 1;
+    }
+    else if(vector_tateti[2] != 1 && vector_tateti[2] != 0 && vector_tateti[5] == 0 && vector_tateti[8] == 0) {
+        vector_tateti[2] = 1;
+    }
+    //Gana en la tercera columna
+    else if(vector_tateti[3] == 0 && vector_tateti[6] == 0 && vector_tateti[9] != 1 && vector_tateti[9] != 0) {
+        vector_tateti[9] = 1;
+    }
+    else if(vector_tateti[3] == 0 && vector_tateti[6] != 1 && vector_tateti[6] != 0 && vector_tateti[9] == 0) {
+        vector_tateti[6] = 1;
+    }
+    else if(vector_tateti[3] != 1 && vector_tateti[3] != 0 && vector_tateti[6] == 0 && vector_tateti[9] == 0) {
+        vector_tateti[3] = 1;
+    }
+    //Gana en la diagonal izquierda inferior derecha superior
+    else if(vector_tateti[7] == 0 && vector_tateti[5] == 0 && vector_tateti[3] != 1 && vector_tateti[3] != 0) {
+        vector_tateti[3] = 1;
+    }
+    else if(vector_tateti[7] == 0 && vector_tateti[5] != 1 && vector_tateti[5] != 0 && vector_tateti[3] == 0) {
+        vector_tateti[5] = 1;
+    }
+    else if(vector_tateti[7] != 1 && vector_tateti[7] != 0 && vector_tateti[5] == 0 && vector_tateti[3] == 0) {
+        vector_tateti[7] = 1;
+    }
+    //Gana en la diagonal izquierda superior derecha inferior
+    else if(vector_tateti[1] == 0 && vector_tateti[5] == 0 && vector_tateti[9] != 1 && vector_tateti[9] != 0) {
+        vector_tateti[9] = 1;
+    }
+    else if(vector_tateti[1] == 0 && vector_tateti[5] != 1 && vector_tateti[5] != 0 && vector_tateti[9] == 0) {
+        vector_tateti[9] = 1;
+    }
+    else if(vector_tateti[1] != 1 && vector_tateti[1] != 0 && vector_tateti[5] == 0 && vector_tateti[9] == 0) {
+        vector_tateti[1] = 1;
+    }
+    //TRATA DE COLOCAR LA FIJA DONDE PUEDA
+    else if(vector_tateti[1] != 1 && vector_tateti[1] != 0){
+        vector_tateti[1] = 1;
+    }
+    else if(vector_tateti[2] != 1 && vector_tateti[2] != 0){
+        vector_tateti[2] = 1;
+    }
+    else if(vector_tateti[3] != 1 && vector_tateti[3] != 0){
+        vector_tateti[3] = 1;
+    }
+    else if(vector_tateti[4] != 1 && vector_tateti[4] != 0){
+        vector_tateti[4] = 1;
+    }
+    else if(vector_tateti[5] != 1 && vector_tateti[5] != 0){
+        vector_tateti[5] = 1;
+    }
+    else if(vector_tateti[6] != 1 && vector_tateti[6] != 0){
+        vector_tateti[6] = 1;
+    }
+    else if(vector_tateti[7] != 1 && vector_tateti[7] != 0){
+        vector_tateti[7] = 1;
+    }
+    else if(vector_tateti[8] != 1 && vector_tateti[8] != 0){
+        vector_tateti[8] = 1;
+    }
+    else if(vector_tateti[9] != 1 && vector_tateti[9] != 0){
+        vector_tateti[9] = 1;
+    }
 
     }
     //---------------------------------------------------------------------------------------
