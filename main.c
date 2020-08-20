@@ -529,6 +529,28 @@ void imprimir_vector(int vector[9]) {
 	printf("|\n");
 	textcolor(15);
 	printf("-------------\n");
+	}
+
+//0 -> x, 1 -> o
+int main(){
+    int opcion;
+    textcolor(15);
+    printf("Desea jugar contra una persona o la maquina?\n");
+    printf("\n");
+    printf("0 -> persona\n");
+    printf("\n");
+    printf("1 -> maquina\n");
+    printf("\n");
+    scanf("%d", &opcion);
+    printf("\n");
+    printf("\n");
+    if(opcion == 0){
+        jugar_contra_humano();
+    }
+    else{
+        jugar_contra_maquina();
+    }
+
 
 	return 0;
 }
