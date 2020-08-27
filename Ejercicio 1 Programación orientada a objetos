@@ -1,0 +1,52 @@
+object personaje {
+	var energia = 100
+	var herramientas = 10
+	var habilidades = 4 
+	method construir(minutos){
+		energia = energia - (minutos % 2)
+	
+	}
+	method comer(){
+		energia = energia + 25
+		
+		
+	}
+	method comer_verdura(){
+		
+		energia = energia + 30
+	}
+	method beber(){
+		energia = energia + 25
+	}
+	method beber_agua(){
+		energia = energia + 30
+	}
+	method descansar(minutos){
+		
+		energia = energia + (minutos * 2)
+	}
+	method descansar_cama(minutos){
+		energia = energia + (minutos * 3)
+	}
+    method aprender(horas){
+    	habilidades = habilidades +(horas * 5)
+		}
+
+    method aprender(){
+    	habilidades = habilidades + herramientas * 2
+	
+}
+   
+     }
+object entrenador {
+	var pupilo
+	method pupilo(){
+		return pupilo
+	}
+	
+   method entrenar (){
+	pupilo.volar(70)
+	pupilo.meditar(50)
+	pupilo.estudiar(30)
+}
+}
